@@ -59,7 +59,7 @@ const ImageGallery=({photo})=>{
                     {({ selected }) => (
                       <>
                         <span className="absolute inset-0 rounded-md overflow-hidden">
-                          <img src={`${process.env.REACT_APP_API_URL}${photo}`} alt="" className="w-full h-full object-center object-cover" />
+                          <img src={`${process.env.AWS_BACKUP_S3}${photo}`} alt="" className="w-full h-full object-center object-cover" />
                         </span>
                         <span
                           className={classNames(
@@ -79,7 +79,7 @@ const ImageGallery=({photo})=>{
               {product && product.images.map((image) => (
                 <Tab.Panel key={image.id}>
                   <img
-                    src={`${process.env.REACT_APP_API_URL}${photo}`}
+                    src={`${process.env.AWS_BACKUP_S3}${photo}`}
                     alt=""
                     className="w-full h-full object-center object-cover sm:rounded-lg"
                   />
