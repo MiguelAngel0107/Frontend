@@ -6,7 +6,7 @@ function Alert ({
     alert
 }){
     const displayAlert = () => {
-        if (alert !== null && (alert.alertType=='green' || alert.alertType=='red')){
+        if (alert !== null && (alert.alertType ==='green' || alert.alertType ==='red')){
             return (
                 <div className={`rounded-md bg-${alert.alertType}-50 p-4`}>
                 <div className="flex">
