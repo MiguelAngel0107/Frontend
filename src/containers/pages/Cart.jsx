@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid'
 import CartItem from "../../components/cart/CartItem";
 import WishlistItem from "../../components/cart/WishListItem";
-
+import url from '../../helpers/awsS3'
 //import {
 //    remove_wishlist_item,
 //} from "../../redux/actions/wishlist";

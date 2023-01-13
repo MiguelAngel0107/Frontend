@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import url from '../../helpers/awsS3'
 const products = [
     {
       id: 1,
@@ -30,7 +31,7 @@ const products = [
               <div key={product.id} className="group relative">
                 <div className="w-full h-96 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-auto sm:aspect-w-2 sm:aspect-h-3">
                   <img
-                    src={`${process.env.AWS_BACKUP_S3}${product.photo}`}
+                    src={`${url}${product.photo}`}
                     alt=""
                     className="w-full h-full object-center object-cover"
                   />

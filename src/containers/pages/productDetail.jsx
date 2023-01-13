@@ -19,6 +19,7 @@ import {
 } from '../../redux/actions/cart'
 import ImageGallery from '../../components/product/ImageGallery'
 
+import url from '../../helpers/awsS3'
 
 
 const product = {

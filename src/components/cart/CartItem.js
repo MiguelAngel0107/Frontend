@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { UploadIcon, XIcon, CheckIcon, ClockIcon } from "@heroicons/react/solid";
 import { useEffect } from "react";
-
+import url from '../../helpers/awsS3'
 
 
 const WishlistItem = ({
@@ -68,7 +68,7 @@ const WishlistItem = ({
         <li className="flex py-6 sm:py-10">
             <div className="flex-shrink-0">
             <img
-                src={`${process.env.AWS_BACKUP_S3}${item.product.photo}`}
+                src={`${url}${item.product.photo}`}
                 alt=""
                 className="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
             />

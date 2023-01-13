@@ -1,5 +1,5 @@
 import { Tab } from '@headlessui/react'
-
+import url from '../../helpers/awsS3'
 const product = {
     name: 'Zip Tote Basket',
     price: '$140',
@@ -59,7 +59,7 @@ const ImageGallery=({photo})=>{
                     {({ selected }) => (
                       <>
                         <span className="absolute inset-0 rounded-md overflow-hidden">
-                          <img src={`${process.env.AWS_BACKUP_S3}${photo}`} alt="" className="w-full h-full object-center object-cover" />
+                          <img src={`${url}${photo}`} alt="" className="w-full h-full object-center object-cover" />
                         </span>
                         <span
                           className={classNames(
@@ -79,7 +79,7 @@ const ImageGallery=({photo})=>{
               {product && product.images.map((image) => (
                 <Tab.Panel key={image.id}>
                   <img
-                    src={`${process.env.AWS_BACKUP_S3}${photo}`}
+                    src={`${url}${photo}`}
                     alt=""
                     className="w-full h-full object-center object-cover sm:rounded-lg"
                   />
