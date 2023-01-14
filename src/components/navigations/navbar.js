@@ -37,24 +37,18 @@ import { get_item_total } from '../../redux/actions/cart'
 
 const solutions = [
     {
-        name: 'Analytics',
+        name: 'Tienda',
         description: 'Get a better understanding of where your traffic is coming from.',
-        href: '#',
-        icon: ChartBarIcon,
-    },
-    {
-        name: 'Engagement',
-        description: 'Speak directly to your customers in a more meaningful way.',
-        href: '#',
-        icon: CursorClickIcon,
-    },
-    { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-    {
-        name: 'Integrations',
-        description: "Connect with third-party tools that you're already using.",
-        href: '#',
+        href: '/shop',
         icon: ViewGridIcon,
     },
+    {
+        name: 'Carrito',
+        description: 'Speak directly to your customers in a more meaningful way.',
+        href: '/cart',
+        icon: CursorClickIcon,
+    },
+    
 ]
 const callsToAction = [
     { name: 'Watch Demo', href: '#', icon: PlayIcon },
@@ -270,7 +264,7 @@ function Navbar({
               <div className="-mr-2 -my-2 md:hidden">
                 
                 <Link to="/cart" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span className="sr-only">Open menu</span>
+                  <span className="sr-only">Cart</span>
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                   <span className="text-xs absolute top-1 mt-3 ml-4 bg-red-500 text-white font-semibold rounded-full px-2 text-center">{total_items}</span>
                 </Link>
@@ -326,11 +320,13 @@ function Navbar({
                 <div className="pt-5 pb-6 px-5 sm:pb-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <img
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                        alt="Workflow"
-                      />
+                      <Link to="/" >
+                          <img
+                            className="h-8 w-auto"
+                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                            alt="Workflow"
+                          />
+                      </Link>
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -342,54 +338,40 @@ function Navbar({
                   <div className="mt-6 sm:mt-8">
                     <nav>
                       <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
+
+
+
+
                         {solutions.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"
+                          <NavLink 
+                          key={item.name}
+                          to={item.href} 
+                          className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"
                           >
                             <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
                               <item.icon className="h-6 w-6" aria-hidden="true" />
                             </div>
                             <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
-                          </a>
+                          </NavLink>
+                          
                         ))}
+                        
+
+
+
+
                       </div>
                       <div className="mt-8 text-base">
-                        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                        <NavLink to="/shop" className="font-medium text-indigo-600 hover:text-indigo-500">
                           {' '}
                           View all products <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        </NavLink>
                       </div>
                     </nav>
                   </div>
                 </div>
                 <div className="py-6 px-5">
-                  <div className="grid grid-cols-2 gap-4">
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Pricing
-                    </a>
-    
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Docs
-                    </a>
-    
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Company
-                    </a>
-    
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Resources
-                    </a>
-    
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Blog
-                    </a>
-    
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Contact Sales
-                    </a>
-                  </div>
+                  
                   <div className="mt-6">
                   {isAuthenticated?<Link
                       to="/dashboard"
@@ -404,11 +386,10 @@ function Navbar({
                     Sign up
                   </a>}
                     
-    
                     <p className="mt-6 text-center text-base font-medium text-gray-500">
                       Existing customer?{' '}
-                      
-                      
+
+
                       <a href="#" className="text-indigo-600 hover:text-indigo-500">
                         Sign in
                       </a>
