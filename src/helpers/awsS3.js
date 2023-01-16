@@ -1,3 +1,3 @@
-const url = 'https://owndark.s3.amazonaws.com'
+const url = '' 
 
 export default url

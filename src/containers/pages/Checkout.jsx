@@ -266,7 +266,7 @@ const Checkout = ({
               type="submit"
               className="w-full bg-green-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-green-500"
             >
-              Place Order
+              Terminar Compra
             </button>}
             </div>
           </>

@@ -373,26 +373,25 @@ function Navbar({
                 <div className="py-6 px-5">
                   
                   <div className="mt-6">
-                  {isAuthenticated?<Link
+                  {isAuthenticated ? <Link
                       to="/dashboard"
                       className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                     >
-                      Sign up
-                    </Link>:
-                    <a
-                    href="#"
+                      Dashboard
+                    </Link> :
+                    <Link
+                    to="/login"
                     className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                  >
-                    Sign up
-                  </a>}
+                    >
+                    Login
+                    </Link>}
                     
                     <p className="mt-6 text-center text-base font-medium text-gray-500">
                       Existing customer?{' '}
 
-
-                      <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                        Sign in
-                      </a>
+                      <Link to="/signup" className="text-indigo-600 hover:text-indigo-500">
+                        Register
+                      </Link>
                     </p>
                   </div>
                 </div>

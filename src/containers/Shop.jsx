@@ -24,11 +24,10 @@ import { prices } from '../helpers/fixedPrices'
 
 
 const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
+  { name: 'Mas Vendido', href: '#', current: true },
+  { name: 'Mas Reciente', href: '#', current: false },
+  { name: 'Mas Barato', href: '#', current: false },
+  { name: 'Mas Caro', href: '#', current: false },
 ]
 const subCategories = [
   { name: 'Totes', href: '#' },
@@ -406,10 +405,11 @@ const Shop = ({
             <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">New Arrivals</h1>
 
             <div className="flex items-center">
+
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                    Sort
+                    Filters
                     <ChevronDownIcon
                       className="flex-shrink-0 -mr-1 ml-1 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
